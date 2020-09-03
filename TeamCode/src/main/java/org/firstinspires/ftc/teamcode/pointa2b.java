@@ -78,7 +78,7 @@ public class pointa2b extends LinearOpMode {
             LeftRear.setMode(DcMotor.RunMode.RUN_TO_POSITION);
             RightRear.setMode(DcMotor.RunMode.RUN_TO_POSITION);
            // check this part!!!
-
+            //TODO HOW TO USE RUN TO POSITION WITHOUT WHEEL ENCODERS
             double left_power= LeftRear.getPower();
             double right_power= RightRear.getPower();
             LeftFront.setPower(left_power);
