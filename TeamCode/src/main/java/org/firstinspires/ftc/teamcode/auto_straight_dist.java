@@ -6,11 +6,12 @@ import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
+import com.qualcomm.robotcore.robot.Robot;
 
 import org.firstinspires.ftc.robotcore.external.Telemetry;
 
 @Autonomous(name = "auto straight drive")
-public class auto_straight_drive extends LinearOpMode {
+public class auto_straight_dist extends LinearOpMode {
     DcMotor LeftFront;
     DcMotor LeftRear;
     DcMotor RightFront;
@@ -27,7 +28,7 @@ public class auto_straight_drive extends LinearOpMode {
         LeftFront.setDirection(DcMotorSimple.Direction.REVERSE);
         LeftRear.setDirection(DcMotorSimple.Direction.REVERSE);
 
-       // resetting encoders
+        // resetting encoders
 
         LeftRear.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
 
@@ -40,7 +41,7 @@ public class auto_straight_drive extends LinearOpMode {
         RightRear.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         int i =0;
         waitForStart();
-        while (opModeIsActive() ) {
+        while (opModeIsActive() && LeftRear.getCurrentPosition()>123200) {
 //            telemetry.addData("Left DRIVING TO: %7d ", LeftRear.getCurrentPosition() * -1);
 //            telemetry.addData("Right DRIVING TO: %7d ", RightRear.getCurrentPosition());
 //            telemetry.addLine("inloop");
